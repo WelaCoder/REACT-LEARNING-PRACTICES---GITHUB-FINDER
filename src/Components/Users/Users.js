@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import UserItem from "./UserItem";
 import Spinner from "../layout/Spinner";
-const Users = ({ users, loading }) => {
+import GithubContext from "../../context/github/github";
+const Users = () => {
+  const githubContext = useContext(GithubContext);
+  const { users, loading } = githubContext;
   if (loading) {
     return <Spinner />;
   } else {
@@ -19,4 +22,5 @@ const UserStyle = {
   gridGap: "1rem",
   gridTemplateColumns: "repeat(3, 1fr)"
 };
+
 export default Users;
