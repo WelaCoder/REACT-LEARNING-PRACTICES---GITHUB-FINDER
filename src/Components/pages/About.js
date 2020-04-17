@@ -1,6 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      $(p)[0].fadeOut();
+    }, 2000);
+  }, []);
   return (
     <Fragment>
       <h1>About this app</h1>
